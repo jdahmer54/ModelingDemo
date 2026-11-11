@@ -1,0 +1,6 @@
+unique_name: con_se_library_medclaims_insight
+object_type: connection
+label: con_se_library_medclaims_insight
+as_connection: Databricks
+database: se_library
+schema: medclaims_insight

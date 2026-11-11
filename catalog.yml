@@ -1,0 +1,6 @@
+version: 1
+unique_name: JD_ModelingDemo
+object_type: catalog
+label: JD_ModelingDemo
+aggressive_agg_promotion: false
+build_speculative_aggs: true

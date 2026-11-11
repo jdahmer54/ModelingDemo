@@ -1,0 +1,37 @@
+unique_name: dim_date
+object_type: dataset
+label: dim_date
+columns:
+  - name: date_key
+    comment: YYYYMMDD surrogate key
+    data_type: long
+  - name: full_date
+    data_type: date
+  - name: year
+    data_type: long
+  - name: quarter
+    data_type: long
+  - name: quarter_label
+    comment: e.g. 2025-Q3
+    data_type: string
+  - name: month
+    data_type: long
+  - name: month_name
+    data_type: string
+  - name: year_month
+    comment: YYYY-MM
+    data_type: string
+  - name: month_start_key
+    comment: YYYYMM01 of this day
+    data_type: long
+  - name: iso_week
+    data_type: long
+  - name: day_of_week
+    data_type: string
+  - name: is_weekend
+    data_type: boolean
+  - name: is_complete_month
+    comment: month ends on/before the paid-through date
+    data_type: boolean
+connection_id: con_se_library_medclaims_insight
+table: dim_date

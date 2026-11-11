@@ -1,0 +1,84 @@
+unique_name: fact_claim_header
+object_type: dataset
+label: fact_claim_header
+columns:
+  - name: claim_id
+    data_type: long
+  - name: claim_number
+    data_type: string
+  - name: member_id
+    comment: FK dim_member
+    data_type: long
+  - name: billing_provider_id
+    comment: FK dim_provider
+    data_type: long
+  - name: geo_id
+    comment: FK dim_geography (member market)
+    data_type: long
+  - name: lob_id
+    comment: FK dim_line_of_business
+    data_type: long
+  - name: plan_id
+    comment: FK dim_plan
+    data_type: long
+  - name: service_category_id
+    comment: FK dim_service_category
+    data_type: long
+  - name: claim_type
+    data_type: string
+  - name: claim_form
+    comment: UB-04 / CMS-1500
+    data_type: string
+  - name: place_of_service
+    data_type: string
+  - name: service_from_date_key
+    comment: FK dim_date
+    data_type: long
+  - name: service_thru_date_key
+    comment: FK dim_date
+    data_type: long
+  - name: incurred_month_key
+    comment: FK dim_date (YYYYMM01 of service-from)
+    data_type: long
+  - name: received_date_key
+    comment: FK dim_date
+    data_type: long
+  - name: adjudicated_date_key
+    comment: FK dim_date
+    data_type: long
+  - name: primary_diagnosis_id
+    comment: FK dim_diagnosis
+    data_type: long
+  - name: drg_procedure_id
+    comment: FK dim_procedure (MS-DRG, inpatient only)
+    data_type: long
+  - name: length_of_stay
+    comment: days (IP/SNF)
+    data_type: long
+  - name: admission_count
+    comment: 1 = paid inpatient admission
+    data_type: long
+  - name: er_visit_count
+    comment: 1 = paid ER visit
+    data_type: long
+  - name: claim_status
+    comment: Paid / Denied
+    data_type: string
+  - name: denial_reason
+    data_type: string
+  - name: network_status
+    data_type: string
+  - name: line_count
+    data_type: long
+  - name: billed_amount
+    data_type: decimal(18,2)
+  - name: allowed_amount
+    data_type: decimal(18,2)
+  - name: paid_amount
+    comment: plan paid
+    data_type: decimal(18,2)
+  - name: member_cost_share
+    comment: deductible + copay + coinsurance
+    data_type: decimal(18,2)
+connection_id: con_se_library_medclaims_insight
+table: fact_claim_header

@@ -1,0 +1,6 @@
+unique_name: m_fact_claim_header_claim_id_non-null
+object_type: metric
+label: Count of Claims
+calculation_method: count non-null
+column: claim_id
+dataset: fact_claim_header

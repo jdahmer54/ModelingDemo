@@ -1,0 +1,6 @@
+unique_name: m_fact_claim_header_billed_amount_sum
+object_type: metric
+label: Billed Amount-Sum
+calculation_method: sum
+column: billed_amount
+dataset: fact_claim_header

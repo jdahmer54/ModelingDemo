@@ -1,0 +1,39 @@
+unique_name: ClaimModelDemo
+object_type: model
+label: ClaimModelDemo
+metrics:
+  - unique_name: m_fact_claim_header_claim_id_non-null
+    folder: Claim Metrics
+  - unique_name: m_fact_claim_header_billed_amount_sum
+    folder: Claim Metrics
+  - unique_name: m_fact_claim_header_paid_amount_sum
+    folder: Claim Metrics
+relationships:
+  - unique_name: fact_claim_header_service_from_date_key_to_date_dimension_day_id_level
+    from:
+      dataset: fact_claim_header
+      join_columns:
+        - service_from_date_key
+    role_play: Service {0}
+    to:
+      dimension: date_dimension
+      level: day_id_level
+  - unique_name: fact_claim_header_received_date_key_to_date_dimension_day_id_level
+    from:
+      dataset: fact_claim_header
+      join_columns:
+        - received_date_key
+    role_play: Received {0}
+    to:
+      dimension: date_dimension
+      level: day_id_level
+  - unique_name: >-
+      fact_claim_header_billing_provider_id_to_dim_provider_dimension_dim_provider_dimension
+      Level
+    from:
+      dataset: fact_claim_header
+      join_columns:
+        - billing_provider_id
+    to:
+      dimension: dim_provider_dimension
+      level: dim_provider_dimension Level

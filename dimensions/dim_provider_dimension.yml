@@ -1,0 +1,35 @@
+unique_name: dim_provider_dimension
+object_type: dimension
+label: Provider Dimension
+hierarchies:
+  - unique_name: dim_provider_dimension Hierarchy
+    label: dim_provider_dimension Hierarchy
+    levels:
+      - unique_name: health_system
+      - unique_name: dim_provider_dimension Level
+        secondary_attributes:
+          - unique_name: provider_type
+            label: Provider Type
+            contains_unique_names: false
+            dataset: dim_provider
+            is_unique_key: false
+            key_columns:
+              - provider_type
+            name_column: provider_type
+level_attributes:
+  - unique_name: dim_provider_dimension Level
+    label: Provider Name
+    contains_unique_names: false
+    dataset: dim_provider
+    is_unique_key: false
+    key_columns:
+      - provider_id
+    name_column: provider_name
+  - unique_name: health_system
+    label: Health System
+    contains_unique_names: false
+    dataset: dim_provider
+    key_columns:
+      - health_system
+    name_column: health_system
+type: standard
